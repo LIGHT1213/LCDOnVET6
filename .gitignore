@@ -1,0 +1,10 @@
+
+*.pan39
+*.o
+*.d
+*.crf
+*.dep
+MDK-ARM/JLinkLog.txt
+*.axf
+*.sct
+*.lnp
