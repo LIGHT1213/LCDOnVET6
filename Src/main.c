@@ -20,6 +20,7 @@
 
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
+#include "spi.h"
 #include "usart.h"
 #include "gpio.h"
 #include "fsmc.h"
@@ -28,6 +29,8 @@
 /* USER CODE BEGIN Includes */
 #include "UserMain.h"
 #include "ILI93xx.h"
+#include "w25qxx.h"
+#include "TOUCH/touch.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -92,8 +95,12 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_FSMC_Init();
+  MX_SPI1_Init();
   /* USER CODE BEGIN 2 */
 	TFTLCD_Init();
+	//lcddev.id =0x9341;
+	//W25QXX_Init();
+	//TP_Init();
 	//lcddev.id =0x9341;
   /* USER CODE END 2 */
 
@@ -102,6 +109,7 @@ int main(void)
 
   while (1)
   {
+		//LCD_Clear(WHITE);
 		POINT_COLOR=RED; 
 	LCD_ShowString(30,50,200,16,16,"mcudev STM32F4");	
 	LCD_ShowString(30,70,200,16,16,"SPI TEST");	

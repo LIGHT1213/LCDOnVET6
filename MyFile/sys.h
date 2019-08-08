@@ -83,6 +83,8 @@
 #define u8 uint8_t
 #define vu16 volatile uint16_t
 #define vu32 volatile uint32_t
+#define s32 long
+#define s8 short
 //以下为汇编函数
 void WFI_SET(void);		//执行WFI指令
 void INTX_DISABLE(void);//关闭所有中断
